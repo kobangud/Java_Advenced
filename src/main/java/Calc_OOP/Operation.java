@@ -1,12 +1,14 @@
 package Calc_OOP;
 
+import java.io.IOException;
+
 public class Operation {
-    private double fierstOperand;
+    private double firstOperand;
     private double secondOperand;
     private String arifznak;
 
-    public Operation(double fierstOperand, double secondOperand, String arifznak) {
-        this.fierstOperand = fierstOperand;
+    public Operation(double firstOperand, double secondOperand, String arifznak) {
+        this.firstOperand = firstOperand;
         this.secondOperand = secondOperand;
         this.arifznak = arifznak;
     }
@@ -14,14 +16,14 @@ public class Operation {
     public Operation() {
     }
 
-    ;
 
-    public double getFierstOperand() {
-        return fierstOperand;
+
+    public double getFirstOperand() {
+        return firstOperand;
     }
 
-    public void setFierstOperand(double fierstOperand) {
-        this.fierstOperand = fierstOperand;
+    public void setFirstOperand(double firstOperand) {
+        this.firstOperand = firstOperand;
     }
 
     public double getSecondOperand() {
@@ -34,15 +36,23 @@ public class Operation {
 
     public void result() {
         if (arifznak == "+") {
-            System.out.printf("Результат сложения аргументов равен  %.4f", (getFierstOperand() + getSecondOperand()));
+            System.out.printf("Результат сложения аргументов равен  %.4f", (getFirstOperand() + getSecondOperand()));
         } else if (arifznak == "-") {
-            System.out.printf("Результат вычетания аргументов равен  %.4f", (getFierstOperand() - getSecondOperand()));
+            System.out.printf("Результат вычетания аргументов равен  %.4f", (getFirstOperand() - getSecondOperand()));
         } else if (arifznak == "*") {
-            System.out.printf("Результат умножения аргументов равен  %.4f", (getFierstOperand() * getSecondOperand()));
+            System.out.printf("Результат умножения аргументов равен  %.4f", (getFirstOperand() * getSecondOperand()));
         } else if (arifznak == "/") {
-            System.out.printf("Результат деления аргументов равен  %.4f", (getFierstOperand() / getSecondOperand()));
-        }
+            try {
+            if (getSecondOperand() == 0) {
+               int val = (int) getFirstOperand() / (int) getSecondOperand();
+            }
+                System.out.printf("Результат деления аргументов равен  %.4f", (getFirstOperand() / getSecondOperand()));
 
+        }
+            catch (ArithmeticException e) {
+                System.out.println("На ноль делить нельзя");
+            }
+        }
     }
 }
 
