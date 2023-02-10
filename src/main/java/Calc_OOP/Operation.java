@@ -3,9 +3,18 @@ package Calc_OOP;
 public class Operation {
     private double fierstOperand;
     private double secondOperand;
-    public int arifznak;
+    private String arifznak;
 
-    public Operation() {};
+    public Operation(double fierstOperand, double secondOperand, String arifznak) {
+        this.fierstOperand = fierstOperand;
+        this.secondOperand = secondOperand;
+        this.arifznak = arifznak;
+    }
+
+    public Operation() {
+    }
+
+    ;
 
     public double getFierstOperand() {
         return fierstOperand;
@@ -24,16 +33,18 @@ public class Operation {
     }
 
     public void result() {
-        if (arifznak == '+') {
+        if (arifznak == "+") {
             System.out.printf("Результат сложения аргументов равен  %.4f", (getFierstOperand() + getSecondOperand()));
-        } else if (arifznak == '-') {
+        } else if (arifznak == "-") {
             System.out.printf("Результат вычетания аргументов равен  %.4f", (getFierstOperand() - getSecondOperand()));
-        } else if (arifznak == '*') {
+        } else if (arifznak == "*") {
             System.out.printf("Результат умножения аргументов равен  %.4f", (getFierstOperand() * getSecondOperand()));
-        } else if (arifznak == '/') {
+        } else if (arifznak == "/") {
             System.out.printf("Результат деления аргументов равен  %.4f", (getFierstOperand() / getSecondOperand()));
         }
-    }
 
+    }
 }
+
+
 
