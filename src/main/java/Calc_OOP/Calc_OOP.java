@@ -17,9 +17,8 @@ public class Calc_OOP {
         Operation1.arifznak = System.in.read();
         System.out.println("Введите второй оперант");
         Operation1.setSecondOperand(scanner.nextDouble());
-
-
         Operation1.result();
+        scanner.close();
 
     }
 }
