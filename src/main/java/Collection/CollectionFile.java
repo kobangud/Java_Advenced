@@ -42,5 +42,6 @@ public class CollectionFile {
         }
 
         System.out.println("\nСамое частое слово: " + maxKey + "\nЧисло повторов = " + collections.get(maxKey));
+        scanner.close();
     }
 }
