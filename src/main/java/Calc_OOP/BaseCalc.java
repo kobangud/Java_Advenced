@@ -26,7 +26,6 @@ public class BaseCalc {
         System.out.println("Введите знак операции ");
         calk.setArifznak(System.in.read());
         calk.result();
-
         System.out.printf("Результат: %.4f", calk.getResultat());
         s.close();
 

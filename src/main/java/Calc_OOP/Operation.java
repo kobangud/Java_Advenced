@@ -1,13 +1,10 @@
 package Calc_OOP;
 
-import java.util.InputMismatchException;
-
 public class Operation {
     private double firstOperand = 0;
     private double secondOperand = 1;
     private int arifznak;
     private double resultat;
-
 
     public Operation(double firstOperand, double secondOperand, int arifznak) {
         this.firstOperand = firstOperand;
