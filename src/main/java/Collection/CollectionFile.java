@@ -11,7 +11,7 @@ public class CollectionFile {
 
         String stroka;
         int maxPovtor = 0;
-        String maxKey = null;
+        String maxKey= null;
 
         TreeMap<String, Integer> collections = new TreeMap<>();
 
