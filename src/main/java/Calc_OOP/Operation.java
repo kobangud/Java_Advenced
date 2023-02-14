@@ -1,13 +1,13 @@
 package Calc_OOP;
 
-import java.io.IOException;
-
 public class Operation {
-    private double firstOperand;
-    private double secondOperand;
-    private String arifznak;
+    private double firstOperand = 0;
+    private double secondOperand = 1;
+    private int arifznak;
+    private double resultat;
 
-    public Operation(double firstOperand, double secondOperand, String arifznak) {
+
+    public Operation(double firstOperand, double secondOperand, int arifznak) {
         this.firstOperand = firstOperand;
         this.secondOperand = secondOperand;
         this.arifznak = arifznak;
@@ -15,8 +15,6 @@ public class Operation {
 
     public Operation() {
     }
-
-
 
     public double getFirstOperand() {
         return firstOperand;
@@ -34,27 +32,37 @@ public class Operation {
         this.secondOperand = secondOperand;
     }
 
-    public void result() {
-        if (arifznak == "+") {
-            System.out.printf("Результат сложения аргументов равен  %.4f", (getFirstOperand() + getSecondOperand()));
-        } else if (arifznak == "-") {
-            System.out.printf("Результат вычетания аргументов равен  %.4f", (getFirstOperand() - getSecondOperand()));
-        } else if (arifznak == "*") {
-            System.out.printf("Результат умножения аргументов равен  %.4f", (getFirstOperand() * getSecondOperand()));
-        } else if (arifznak == "/") {
-            try {
-            if (getSecondOperand() == 0) {
-               int val = (int) getFirstOperand() / (int) getSecondOperand();
-            }
-                System.out.printf("Результат деления аргументов равен  %.4f", (getFirstOperand() / getSecondOperand()));
+    public void setArifznak(int arifznak) {
+        this.arifznak = arifznak;
+    }
+
+    public double getResultat() {
+        return resultat;
+    }
+
+    public double result() {
+
+        if (arifznak == '+') {
+            resultat = getFirstOperand() + getSecondOperand();
+
+        } else if (arifznak == '-') {
+            resultat = getFirstOperand() - getSecondOperand();
+
+        } else if (arifznak == '*') {
+            resultat = getFirstOperand() * getSecondOperand();
+
+        } else if (arifznak == '/') {
+            resultat = getFirstOperand() / getSecondOperand();
 
         }
-            catch (ArithmeticException e) {
-                System.out.println("На ноль делить нельзя");
-            }
-        }
+        return resultat;
     }
+
 }
+
+
+
+
 
 
 
