@@ -2,7 +2,7 @@ package Calc_OOP;
 
 public class Operation {
     private double firstOperand = 0;
-    private double secondOperand = 1;
+    private double secondOperand = 0;
     private int arifznak;
     private double resultat;
 
@@ -11,6 +11,8 @@ public class Operation {
         this.secondOperand = secondOperand;
         this.arifznak = arifznak;
     }
+
+
 
     public Operation() {
     }
