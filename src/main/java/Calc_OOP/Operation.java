@@ -1,5 +1,7 @@
 package Calc_OOP;
 
+import java.util.InputMismatchException;
+
 public class Operation {
     private double firstOperand = 0;
     private double secondOperand = 1;
@@ -52,7 +54,17 @@ public class Operation {
             resultat = getFirstOperand() * getSecondOperand();
 
         } else if (arifznak == '/') {
-            resultat = getFirstOperand() / getSecondOperand();
+
+            if (getSecondOperand() == 0) {
+                try {
+                    //Вызываем искуственно ошибку,если второй операнд = 0
+                    throw new ArithmeticException("");
+                } catch (ArithmeticException e) {
+                    System.out.println("На ноль делить нельзя: " + e);
+                }
+            } else {
+                resultat = getFirstOperand() / getSecondOperand();
+            }
 
         }
         return resultat;
