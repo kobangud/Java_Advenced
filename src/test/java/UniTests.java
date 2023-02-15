@@ -24,25 +24,31 @@ public class UniTests {
 
     @Test
     public void testSum() {
-        Assert.assertEquals("Сумма  = 0", 0, (operation.getFirstOperand() + operation.getSecondOperand()) , 0);
+        Assert.assertEquals("Сумма  = 0", 0, (operation.getFirstOperand() + operation.getSecondOperand()), 0);
 
     }
 
     @Test
     public void testRaznosti() {
-        Assert.assertEquals("Разность = 0", 0, (operation.getFirstOperand() - operation.getSecondOperand()) , 0);
+        Assert.assertEquals("Разность = 0", 0, (operation.getFirstOperand() - operation.getSecondOperand()), 0);
 
     }
 
     @Test
     public void testMultyplay() {
-        Assert.assertEquals("Умножение  = 0", 0, (operation.getFirstOperand() * operation.getSecondOperand()) , 0);
+        Assert.assertEquals("Умножение  = 0", 0, (operation.getFirstOperand() * operation.getSecondOperand()), 0);
 
     }
 
     @Test
     public void testDeleniya() {
-        Assert.assertEquals("На ноль делить НЕЛЬЗЯ ", NaN, (operation.getFirstOperand() / operation.getSecondOperand()) , 0);
+        Assert.assertEquals("На ноль делить НЕЛЬЗЯ ", NaN, (operation.getFirstOperand() / operation.getSecondOperand()), 0);
+
+    }
+
+    @Test
+    public void testNeFormatArifznak() {
+        Assert.assertEquals("Неверный формат ввода", "[+]|-|[*]|/$", operation.getArifznak());
 
     }
 }
