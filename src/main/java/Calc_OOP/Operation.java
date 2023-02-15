@@ -48,7 +48,7 @@ public class Operation {
     }
 
     public double result() {
-        try {
+
 
             if (Objects.equals(arifznak, "+")) {
                 resultat = getFirstOperand() + getSecondOperand();
@@ -72,10 +72,6 @@ public class Operation {
                     resultat = getFirstOperand() / getSecondOperand();
                 }
             }
-
-        } catch (InputMismatchException e) {
-            System.out.println("Неверный формат ввода: " + e);
-        }
 
         return resultat;
     }
