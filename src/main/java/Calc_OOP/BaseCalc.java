@@ -26,24 +26,25 @@ public class BaseCalc {
         System.out.println("Введите знак операции ");
         try {
 
-        calk.setArifznak(s.next("[+]|-|[*]|/$"));
+            calk.setArifznak(s.next("[+]|-|[*]|/$"));
 
         } catch (InputMismatchException e) {
             System.out.println("Неверный формат ввода: " + e);
         }
         if (calk.getSecondOperand() == 0) {
-                try {
-                    //Вызываем искуственно ошибку,если второй операнд = 0
-                    throw new ArithmeticException("");
-                } catch (ArithmeticException e) {
-                    System.out.println("На ноль делить нельзя: " + e);
-                }
-            } else {
+            try {
+                //Вызываем искуственно ошибку,если второй операнд = 0
+                throw new ArithmeticException("");
+            } catch (ArithmeticException e) {
+                System.out.println("На ноль делить нельзя: " + e);
+            }
+        } else {
 
-        calk.result();
+            calk.result();
+
+        }
         System.out.printf("Результат: %.4f", calk.getResultat());
         s.close();
-            }
     }
 
 }

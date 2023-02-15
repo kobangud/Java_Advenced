@@ -11,7 +11,7 @@ public class UniTests {
 
     @Test
     public void FirstOperand() {
-        Assert.assertEquals("Начальное значение первого операнда = 0", 0, operation.getFirstOperand(), 0);
+        Assert.assertEquals("Начальное значение первого операнда = 0", 0, operation.getFirstOperand(),0);
 
     }
 
