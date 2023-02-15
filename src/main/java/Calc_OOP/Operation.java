@@ -49,29 +49,28 @@ public class Operation {
 
     public double result() {
 
+        if (Objects.equals(arifznak, "+")) {
+            resultat = getFirstOperand() + getSecondOperand();
 
-            if (Objects.equals(arifznak, "+")) {
-                resultat = getFirstOperand() + getSecondOperand();
+        } else if (Objects.equals(arifznak, "-")) {
+            resultat = getFirstOperand() - getSecondOperand();
 
-            } else if (Objects.equals(arifznak, "-")) {
-                resultat = getFirstOperand() - getSecondOperand();
+        } else if (Objects.equals(arifznak, "*")) {
+            resultat = getFirstOperand() * getSecondOperand();
 
-            } else if (Objects.equals(arifznak, "*")) {
-                resultat = getFirstOperand() * getSecondOperand();
+        } else if (Objects.equals(arifznak, "/")) {
 
-            } else if (Objects.equals(arifznak, "/")) {
-
-                if (getSecondOperand() == 0) {
-                    try {
-                        //Вызываем искуственно ошибку,если второй операнд = 0
-                        throw new ArithmeticException("");
-                    } catch (ArithmeticException e) {
-                        System.out.println("На ноль делить нельзя: " + e);
-                    }
-                } else {
-                    resultat = getFirstOperand() / getSecondOperand();
+            if (getSecondOperand() == 0) {
+                try {
+                    //Вызываем искуственно ошибку,если второй операнд = 0
+                    throw new ArithmeticException("");
+                } catch (ArithmeticException e) {
+                    System.out.println("На ноль делить нельзя: " + e);
                 }
+            } else {
+                resultat = getFirstOperand() / getSecondOperand();
             }
+        }
 
         return resultat;
     }
