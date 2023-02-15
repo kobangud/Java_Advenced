@@ -1,12 +1,14 @@
 package Calc_OOP;
 
+import java.util.Objects;
+
 public class Operation {
     private double firstOperand = 0;
     private double secondOperand = 0;
-    private int arifznak;
+    private String arifznak;
     private double resultat;
 
-    public Operation(double firstOperand, double secondOperand, int arifznak) {
+    public Operation(double firstOperand, double secondOperand, String arifznak) {
         this.firstOperand = firstOperand;
         this.secondOperand = secondOperand;
         this.arifznak = arifznak;
@@ -33,7 +35,7 @@ public class Operation {
         this.secondOperand = secondOperand;
     }
 
-    public void setArifznak(int arifznak) {
+    public void setArifznak(String arifznak) {
         this.arifznak = arifznak;
     }
 
@@ -43,16 +45,16 @@ public class Operation {
 
     public double result() {
 
-        if (arifznak == '+') {
+        if (Objects.equals(arifznak, "+")) {
             resultat = getFirstOperand() + getSecondOperand();
 
-        } else if (arifznak == '-') {
+        } else if (Objects.equals(arifznak, "-")) {
             resultat = getFirstOperand() - getSecondOperand();
 
-        } else if (arifznak == '*') {
+        } else if (Objects.equals(arifznak, "*")) {
             resultat = getFirstOperand() * getSecondOperand();
 
-        } else if (arifznak == '/') {
+        } else if (Objects.equals(arifznak, "/")) {
 
             if (getSecondOperand() == 0) {
                 try {

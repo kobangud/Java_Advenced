@@ -24,7 +24,13 @@ public class BaseCalc {
         }
 
         System.out.println("Введите знак операции ");
-        calk.setArifznak(System.in.read());
+        try {
+
+        calk.setArifznak(s.next("[+]|-|[*]|/$"));
+
+        } catch (InputMismatchException e) {
+            System.out.println("Неверный формат ввода: " + e);
+        }
         calk.result();
         System.out.printf("Результат: %.4f", calk.getResultat());
         s.close();
