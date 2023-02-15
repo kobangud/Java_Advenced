@@ -31,10 +31,19 @@ public class BaseCalc {
         } catch (InputMismatchException e) {
             System.out.println("Неверный формат ввода: " + e);
         }
+        if (calk.getSecondOperand() == 0) {
+                try {
+                    //Вызываем искуственно ошибку,если второй операнд = 0
+                    throw new ArithmeticException("");
+                } catch (ArithmeticException e) {
+                    System.out.println("На ноль делить нельзя: " + e);
+                }
+            } else {
+
         calk.result();
         System.out.printf("Результат: %.4f", calk.getResultat());
         s.close();
-
+            }
     }
 
 }

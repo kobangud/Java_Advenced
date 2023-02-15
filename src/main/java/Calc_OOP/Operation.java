@@ -60,17 +60,8 @@ public class Operation {
 
         } else if (Objects.equals(arifznak, "/")) {
 
-            if (getSecondOperand() == 0) {
-                try {
-                    //Вызываем искуственно ошибку,если второй операнд = 0
-                    throw new ArithmeticException("");
-                } catch (ArithmeticException e) {
-                    System.out.println("На ноль делить нельзя: " + e);
-                }
-            } else {
                 resultat = getFirstOperand() / getSecondOperand();
             }
-        }
 
         return resultat;
     }
