@@ -1,12 +1,10 @@
 package Calc_OOP;
 
-
-import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BaseCalc {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         Scanner s = new Scanner(System.in);
         Operation calk = new Operation();
@@ -31,20 +29,18 @@ public class BaseCalc {
         } catch (InputMismatchException e) {
             System.out.println("Неверный формат ввода: " + e);
         }
-        if (calk.getSecondOperand() == 0) {
-            try {
-                //Вызываем искуственно ошибку,если второй операнд = 0
-                throw new ArithmeticException("");
-            } catch (ArithmeticException e) {
-                System.out.println("На ноль делить нельзя: " + e);
-            }
-        } else {
 
+        try {
             calk.result();
+            System.out.printf("Результат: %.4f", calk.getResultat());
+            s.close();
 
+        } catch (ArithmeticException e) {
+            System.out.println("На ноль делить нельзя: " + e);
         }
-        System.out.printf("Результат: %.4f", calk.getResultat());
-        s.close();
+
     }
 
 }
+
+

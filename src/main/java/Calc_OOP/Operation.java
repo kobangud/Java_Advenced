@@ -1,12 +1,11 @@
 package Calc_OOP;
 
-import java.util.InputMismatchException;
 import java.util.Objects;
 
 public class Operation {
-    private double firstOperand = 0;
-    private double secondOperand = 0;
-    private String arifznak = ("[+]|-|[*]|/$");
+    private double firstOperand;
+    private double secondOperand;
+    private String arifznak ;
     private double resultat;
 
     public Operation(double firstOperand, double secondOperand, String arifznak) {
@@ -59,13 +58,17 @@ public class Operation {
             resultat = getFirstOperand() * getSecondOperand();
 
         } else if (Objects.equals(arifznak, "/")) {
-
+            //Искусственно вызываем ошибку при делении на ноль
+            if (getSecondOperand() == 0) {
+                throw new ArithmeticException();
+            } else {
                 resultat = getFirstOperand() / getSecondOperand();
             }
-
+        }
         return resultat;
     }
 }
+
 
 
 
